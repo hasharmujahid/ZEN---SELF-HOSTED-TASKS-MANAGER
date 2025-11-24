@@ -1,0 +1,12 @@
+version: '3.8'
+
+services:
+  app:
+    build: .
+    ports:
+      - "8080:5000"
+    environment:
+      - PORT=5000
+      - JWT_SECRET=docker_secret_key
+    volumes:
+      - ./server/database.sqlite:/app/server/database.sqlite
